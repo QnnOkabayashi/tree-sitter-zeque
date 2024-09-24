@@ -4,7 +4,13 @@
 module.exports = grammar({
   name: 'zeque',
 
+  extras: $ => [
+      /\s/,
+      // $.line_comment,
+  ],
+
   rules: {
+    // line_comment: $ => seq('//', token.immediate(/[^\n]*/)),
     source_file: $ => repeat($.decl),
     decl: $ => choice($.fn_decl, $.field_decl),
     fn_decl: $ => seq(
@@ -42,8 +48,8 @@ module.exports = grammar({
         seq($.expr, $.arg_list),
         seq('@', $.name, $.arg_list),
         prec(1, seq('comptime', $.expr)),
-        $.integer,
-        $.bool,
+        $.integer_literal,
+        $.boolean_literal,
         seq('struct', '{', repeat($.decl), '}'),
         seq($.expr, $.constructor_block),
         $.name,
@@ -51,8 +57,8 @@ module.exports = grammar({
         $.block,
     ),
     name: $ => /[_a-zA-Z][_a-zA-Z0-9]*/,
-    integer: $ => /[0-9]+/,
-    bool: $ => choice('true', 'false'),
+    integer_literal: $ => /[0-9]+/,
+    boolean_literal: $ => choice('true', 'false'),
 
     constructor_block: $ => seq(
         '{',

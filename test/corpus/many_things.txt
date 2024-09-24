@@ -44,9 +44,9 @@ fn main() i32 {
                         (name)
                         (arg_list
                           (expr
-                            (bool))))))))
+                            (boolean_literal))))))))
               (constructor_block
                 (constructor_field
                   (name)
                   (expr
-                    (bool)))))))))))
+                    (boolean_literal)))))))))))

@@ -460,11 +460,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "integer"
+          "name": "integer_literal"
         },
         {
           "type": "SYMBOL",
-          "name": "bool"
+          "name": "boolean_literal"
         },
         {
           "type": "SEQ",
@@ -534,11 +534,11 @@
       "type": "PATTERN",
       "value": "[_a-zA-Z][_a-zA-Z0-9]*"
     },
-    "integer": {
+    "integer_literal": {
       "type": "PATTERN",
       "value": "[0-9]+"
     },
-    "bool": {
+    "boolean_literal": {
       "type": "CHOICE",
       "members": [
         {

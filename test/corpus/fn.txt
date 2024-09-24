@@ -16,4 +16,4 @@ fn x() i32 {
         (name))
       (block
         (expr
-          (integer))))))
+          (integer_literal))))))

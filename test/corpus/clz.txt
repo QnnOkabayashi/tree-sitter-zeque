@@ -1,7 +1,6 @@
 ==================
 clz
 ==================
-
 pub fn main() i32 {
     run(256)
 }
@@ -24,7 +23,7 @@ fn run(a: i32) i32 {
             (name))
           (arg_list
             (expr
-              (integer)))))))
+              (integer_literal)))))))
   (decl
     (fn_decl
       (name)

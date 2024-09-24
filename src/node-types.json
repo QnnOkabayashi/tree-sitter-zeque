@@ -34,7 +34,7 @@
     }
   },
   {
-    "type": "bool",
+    "type": "boolean_literal",
     "named": true,
     "fields": {}
   },
@@ -108,7 +108,7 @@
           "named": true
         },
         {
-          "type": "bool",
+          "type": "boolean_literal",
           "named": true
         },
         {
@@ -124,7 +124,7 @@
           "named": true
         },
         {
-          "type": "integer",
+          "type": "integer_literal",
           "named": true
         },
         {
@@ -317,7 +317,7 @@
     "named": false
   },
   {
-    "type": "integer",
+    "type": "integer_literal",
     "named": true
   },
   {
