@@ -6,11 +6,10 @@ module.exports = grammar({
 
   extras: $ => [
       /\s/,
-      // $.line_comment,
+      $.line_comment,
   ],
 
   rules: {
-    // line_comment: $ => seq('//', token.immediate(/[^\n]*/)),
     source_file: $ => repeat($.decl),
     decl: $ => choice($.fn_decl, $.field_decl),
     fn_decl: $ => seq(
@@ -69,5 +68,7 @@ module.exports = grammar({
         '}',
     ),
     constructor_field: $ => seq($.name, ':', $.expr),
+    // line_comment: $ => '//',
+    line_comment: $ => seq('//', token.immediate(/[^\n]*/)),
   }
 });

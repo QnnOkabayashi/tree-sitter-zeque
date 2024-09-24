@@ -200,6 +200,11 @@
     }
   },
   {
+    "type": "line_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "param",
     "named": true,
     "fields": {},
@@ -274,6 +279,10 @@
   },
   {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": "//",
     "named": false
   },
   {

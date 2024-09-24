@@ -8,8 +8,8 @@
 
 ["*" "+" "-" "="] @operator
 
+(line_comment) @comment
 (name) @constructor
 (integer_literal) @number
 ["{" "}" "(" ")"] @punctuation.bracket
 ["," "." ":" ";"] @punctuation.delimiter
-; (line_comment) @comment
