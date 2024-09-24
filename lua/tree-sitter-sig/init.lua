@@ -21,14 +21,7 @@ function M.setup(arg)
     local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
     parser_config.sig = {
         install_info = {
-            url = arg['local'] and join_paths(
-                vim.fn.stdpath('data'),
-                'site',
-                'pack',
-                'packer',
-                'start',
-                'tree-sitter-sig'
-            ) or 'https://github.com/QnnOkabayashi/tree-sitter-sig',
+            url = 'https://github.com/QnnOkabayashi/tree-sitter-sig',
             files = { 'src/parser.c' },
             branch = 'main',
         },
