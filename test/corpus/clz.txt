@@ -1,0 +1,43 @@
+==================
+clz
+==================
+
+pub fn main() i32 {
+    run(256)
+}
+
+fn run(a: i32) i32 {
+    @clz(a)
+}
+
+---
+
+(source_file
+  (decl
+    (fn_decl
+      (name)
+      (expr
+        (name))
+      (block
+        (expr
+          (expr
+            (name))
+          (arg_list
+            (expr
+              (integer)))))))
+  (decl
+    (fn_decl
+      (name)
+      (param
+        (name)
+        (expr
+          (name)))
+      (expr
+        (name))
+      (block
+        (expr
+          (name)
+          (arg_list
+            (expr
+              (name))))))))
+
