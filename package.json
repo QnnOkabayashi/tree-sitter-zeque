@@ -13,5 +13,11 @@
   },
   "devDependencies": {
     "tree-sitter-cli": "^0.23.0"
-  }
+  },
+  "tree-sitter": [
+      {
+          "file-types": ["zq"],
+          "highlights": ["queries/highlights.scm"]
+      }
+  ]
 }
