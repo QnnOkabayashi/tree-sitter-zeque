@@ -21,7 +21,7 @@ function M.setup(arg)
     local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
     parser_config.sig = {
         install_info = {
-            url = 'https://github.com/QnnOkabayashi/tree-sitter-sig',
+            url = 'https://github.com/QnnOkabayashi/tree-sitter-zeque',
             files = { 'src/parser.c' },
             branch = 'main',
         },
@@ -32,7 +32,7 @@ function M.setup(arg)
         ft.setup({
             overrides = {
                 extensions = {
-                    sig = 'sig',
+                    zeque = 'zq',
                 },
             },
         })

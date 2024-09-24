@@ -72,7 +72,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "tree-sitter-YOUR-LANGUAGE-NAME"
+name = "tree-sitter-zeque"
 version = "0.0.1"
 dependencies = [
  "cc",
