@@ -2,7 +2,7 @@
 // @ts-check
 
 module.exports = grammar({
-  name: 'Zeque',
+  name: 'zeque',
 
   rules: {
     source_file: $ => repeat($.decl),
