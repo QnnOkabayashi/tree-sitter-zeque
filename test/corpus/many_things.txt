@@ -1,0 +1,52 @@
+==================
+Many things
+==================
+
+a: i32,
+b: i32,
+
+fn main() i32 {
+  let v = comptime struct {
+    x: @TypeOf(true),
+  } {
+    x: true,
+  };
+}
+
+---
+(source_file
+  (decl
+    (field_decl
+      (name)
+      (expr
+        (name))))
+  (decl
+    (field_decl
+      (name)
+      (expr
+        (name))))
+  (decl
+    (fn_decl
+      (name)
+      (expr
+        (name))
+      (block
+        (stmt
+          (let_
+            (name)
+            (expr
+              (expr
+                (expr
+                  (decl
+                    (field_decl
+                      (name)
+                      (expr
+                        (name)
+                        (arg_list
+                          (expr
+                            (bool))))))))
+              (constructor_block
+                (constructor_field
+                  (name)
+                  (expr
+                    (bool)))))))))))

@@ -1,0 +1,19 @@
+==================
+Basic fn_decl
+==================
+
+fn x() i32 {
+  1
+}
+
+---
+
+(source_file
+  (decl
+    (fn_decl
+      (name)
+      (expr
+        (name))
+      (block
+        (expr
+          (integer))))))
