@@ -9,6 +9,8 @@ module.exports = grammar({
       $.line_comment,
   ],
 
+  word: $ => $.name,
+
   rules: {
     source_file: $ => repeat($.decl),
     decl: $ => choice($.fn_decl, $.field_decl),

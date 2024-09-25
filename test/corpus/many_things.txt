@@ -41,10 +41,12 @@ fn main() i32 {
                     (field_decl
                       (name)
                       (expr
-                        (name)
-                        (arg_list
-                          (expr
-                            (boolean_literal))))))))
+                        (builtin_call
+                          (builtin_function
+                            (name))
+                          (arg_list
+                            (expr
+                              (boolean_literal)))))))))
               (constructor_block
                 (constructor_field
                   (name)

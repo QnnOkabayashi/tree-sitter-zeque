@@ -19,11 +19,12 @@ fn run(a: i32) i32 {
         (name))
       (block
         (expr
-          (expr
-            (name))
-          (arg_list
+          (call
             (expr
-              (integer_literal)))))))
+              (name))
+            (arg_list
+              (expr
+                (integer_literal))))))))
   (decl
     (fn_decl
       (name)
@@ -35,8 +36,9 @@ fn run(a: i32) i32 {
         (name))
       (block
         (expr
-          (name)
-          (arg_list
-            (expr
-              (name))))))))
-
+          (builtin_call
+            (builtin_function
+              (name))
+            (arg_list
+              (expr
+                (name)))))))))
