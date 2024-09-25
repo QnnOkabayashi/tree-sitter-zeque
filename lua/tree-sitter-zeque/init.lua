@@ -25,7 +25,7 @@ function M.setup(arg)
             files = { 'src/parser.c' },
             branch = 'main',
         },
-        maintainers = { '@QnnOkabayashi' }
+        maintainers = { '@QnnOkabayashi' },
         filetype = "zq"
     }
     -- local ok, ft = pcall(require, 'filetype')
