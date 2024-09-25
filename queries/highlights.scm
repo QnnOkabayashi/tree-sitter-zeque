@@ -1,5 +1,3 @@
-; highlights.scm
-
 "fn" @keyword
 "struct" @keyword
 "pub" @keyword
