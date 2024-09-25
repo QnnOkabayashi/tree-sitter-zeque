@@ -16,8 +16,7 @@
   },
   "tree-sitter": [
       {
-          "file-types": ["zq"],
-          "highlights": ["queries/highlights.scm"]
+          "file-types": ["zq"]
       }
   ]
 }

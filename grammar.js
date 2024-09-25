@@ -15,7 +15,7 @@ module.exports = grammar({
     fn_decl: $ => seq(
         optional('pub'),
         'fn',
-        $.name,
+        field('name', $.name),
         '(',
         seq(
             repeat(seq($.param, ',')),
@@ -26,10 +26,22 @@ module.exports = grammar({
         $.block,
     ),
     field_decl: $ => seq($.name, ':', $.expr, ','),
-    param: $ => seq(optional('comptime'), $.name, ':', $.expr),
+    param: $ => seq(
+        optional('comptime'),
+        field('name', $.name),
+        ':',
+        $.expr,
+    ),
     block: $ => seq('{', seq(repeat($.stmt), optional($.expr)), '}'),
     stmt: $ => choice($.let_),
-    let_: $ => seq('let', $.name, optional(seq(':', $.expr)), '=', $.expr, ';'), 
+    let_: $ => seq(
+        'let',
+        field('name', $.name),
+        optional(seq(':', $.expr)),
+        '=',
+        $.expr,
+        ';',
+    ), 
     arg_list: $ => seq(
         '(', 
         seq(
@@ -38,20 +50,35 @@ module.exports = grammar({
         ),
         ')',
     ),
+    call: $ => seq(
+        $.expr,
+        $.arg_list,
+    ),
+    builtin_function: $ => seq(
+        '@',
+        $.name,
+    ),
+    builtin_call: $ => seq(
+        field('builtin_function', $.builtin_function),
+        $.arg_list,
+    ),
+    raw_string_part: $ => seq('\\\\', token.immediate(/[^\n]*/)),
+    raw_string: $ => repeat1($.raw_string_part),
     expr: $ => choice(
         seq('if', $.expr, '{', $.expr, '}', 'else', '{', $.expr, '}'),
         prec.left(4, seq($.expr, '*', $.expr)),
         prec.left(3, seq($.expr, '+', $.expr)),
         prec.left(3, seq($.expr, '-', $.expr)),
         prec.left(2, seq($.expr, '==', $.expr)),
-        seq($.expr, $.arg_list),
-        seq('@', $.name, $.arg_list),
+        $.call,
+        $.builtin_call,
         prec(1, seq('comptime', $.expr)),
         $.integer_literal,
         $.boolean_literal,
+        $.raw_string,
         seq('struct', '{', repeat($.decl), '}'),
         seq($.expr, $.constructor_block),
-        $.name,
+        field('name', $.name),
         seq($.expr, '.', $.name),
         $.block,
     ),
@@ -68,7 +95,6 @@ module.exports = grammar({
         '}',
     ),
     constructor_field: $ => seq($.name, ':', $.expr),
-    // line_comment: $ => '//',
     line_comment: $ => seq('//', token.immediate(/[^\n]*/)),
   }
 });

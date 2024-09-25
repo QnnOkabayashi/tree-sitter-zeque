@@ -39,6 +39,66 @@
     "fields": {}
   },
   {
+    "type": "builtin_call",
+    "named": true,
+    "fields": {
+      "builtin_function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "builtin_function",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "arg_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "builtin_function",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arg_list",
+          "named": true
+        },
+        {
+          "type": "expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "constructor_block",
     "named": true,
     "fields": {},
@@ -94,21 +154,36 @@
   {
     "type": "expr",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "arg_list",
-          "named": true
-        },
         {
           "type": "block",
           "named": true
         },
         {
           "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "builtin_call",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -129,6 +204,10 @@
         },
         {
           "type": "name",
+          "named": true
+        },
+        {
+          "type": "raw_string",
           "named": true
         }
       ]
@@ -156,7 +235,18 @@
   {
     "type": "fn_decl",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -170,10 +260,6 @@
           "named": true
         },
         {
-          "type": "name",
-          "named": true
-        },
-        {
           "type": "param",
           "named": true
         }
@@ -183,17 +269,24 @@
   {
     "type": "let_",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "expr",
-          "named": true
-        },
-        {
-          "type": "name",
           "named": true
         }
       ]
@@ -207,21 +300,48 @@
   {
     "type": "param",
     "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "raw_string",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "expr",
-          "named": true
-        },
-        {
-          "type": "name",
+          "type": "raw_string_part",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "raw_string_part",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -303,6 +423,10 @@
   },
   {
     "type": "@",
+    "named": false
+  },
+  {
+    "type": "\\\\",
     "named": false
   },
   {
