@@ -99,6 +99,32 @@
     }
   },
   {
+    "type": "const_decl",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "constructor_block",
     "named": true,
     "fields": {},
@@ -140,6 +166,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "const_decl",
+          "named": true
+        },
         {
           "type": "field_decl",
           "named": true
@@ -398,6 +428,10 @@
     "named": false
   },
   {
+    "type": "->",
+    "named": false
+  },
+  {
     "type": ".",
     "named": false
   },
@@ -431,6 +465,10 @@
   },
   {
     "type": "comptime",
+    "named": false
+  },
+  {
+    "type": "const",
     "named": false
   },
   {

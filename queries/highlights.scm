@@ -1,4 +1,5 @@
 "fn" @keyword
+"const" @keyword
 "struct" @keyword
 "pub" @keyword
 "let" @keyword
@@ -17,6 +18,8 @@
 ["." ":"] @punctuation.delimiter
 (fn_decl
   name: (name) @function)
+; (const_decl
+;   name: (name) @function)
 (builtin_call
   builtin_function: (builtin_function) @function.builtin)
 (param

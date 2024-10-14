@@ -34,3 +34,7 @@ Since I installed Neovim with homebrew, I got `/opt/homebrew/Cellar/neovim/0.9.0
 
 Then go to that directory, `/queries/zeque/highlights.scm` and paste in the highlights you want.
 
+```
+/opt/homebrew/Cellar/neovim/0.9.0/share/nvim/runtime/queries/zeque/highlights.scm
+```
+
