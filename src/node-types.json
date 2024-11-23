@@ -99,7 +99,7 @@
     }
   },
   {
-    "type": "const_decl",
+    "type": "comptime_decl",
     "named": true,
     "fields": {
       "name": {
@@ -167,7 +167,7 @@
       "required": true,
       "types": [
         {
-          "type": "const_decl",
+          "type": "comptime_decl",
           "named": true
         },
         {
@@ -465,10 +465,6 @@
   },
   {
     "type": "comptime",
-    "named": false
-  },
-  {
-    "type": "const",
     "named": false
   },
   {
