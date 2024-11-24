@@ -13,7 +13,7 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => repeat($.decl),
-    decl: $ => choice($.fn_decl, $.field_decl, $.comptime_decl),
+    decl: $ => choice($.fn_decl, $.field_decl, $.const_decl),
     fn_decl: $ => seq(
         optional('pub'),
         'fn',
@@ -28,9 +28,9 @@ module.exports = grammar({
         $.block,
     ),
     field_decl: $ => seq($.name, ':', $.expr, ','),
-    comptime_decl: $ => seq(
+    const_decl: $ => seq(
         optional('pub'),
-        'comptime',
+        'const',
         field('name', $.name),
         optional(seq(':', $.expr)),
         '=',
@@ -38,7 +38,7 @@ module.exports = grammar({
         ';',
     ),
     param: $ => seq(
-        optional('comptime'),
+        optional('const'),
         field('name', $.name),
         ':',
         $.expr,
@@ -83,7 +83,7 @@ module.exports = grammar({
         prec.left(2, seq($.expr, '==', $.expr)),
         $.call,
         $.builtin_call,
-        prec(1, seq('comptime', $.expr)),
+        prec(1, seq('const', $.expr)),
         $.integer_literal,
         $.boolean_literal,
         $.raw_string,

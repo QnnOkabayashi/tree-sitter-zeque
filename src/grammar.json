@@ -22,7 +22,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "comptime_decl"
+          "name": "const_decl"
         }
       ]
     },
@@ -142,7 +142,7 @@
         }
       ]
     },
-    "comptime_decl": {
+    "const_decl": {
       "type": "SEQ",
       "members": [
         {
@@ -159,7 +159,7 @@
         },
         {
           "type": "STRING",
-          "value": "comptime"
+          "value": "const"
         },
         {
           "type": "FIELD",
@@ -212,7 +212,7 @@
           "members": [
             {
               "type": "STRING",
-              "value": "comptime"
+              "value": "const"
             },
             {
               "type": "BLANK"
@@ -589,7 +589,7 @@
             "members": [
               {
                 "type": "STRING",
-                "value": "comptime"
+                "value": "const"
               },
               {
                 "type": "SYMBOL",

@@ -6,7 +6,7 @@ a: i32,
 b: i32,
 
 fn main() -> i32 {
-  let v = comptime struct {
+  let v = const struct {
     x: @TypeOf(true),
   } {
     x: true,

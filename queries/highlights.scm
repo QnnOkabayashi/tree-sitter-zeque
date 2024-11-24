@@ -2,7 +2,7 @@
 "struct" @keyword
 "pub" @keyword
 "let" @keyword
-"comptime" @keyword
+"const" @keyword
 "if" @keyword
 "else" @keyword
 
